@@ -1,0 +1,113 @@
+{
+  "updatedAt": "2026-01-28T09:38:13.334Z",
+  "createdAt": "2026-01-28T09:17:21.475Z",
+  "id": "bHbDW71loCUZanbM1h8H1",
+  "name": "My workflow",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        -32
+      ],
+      "id": "64ee03a2-cddb-4ee2-b251-aeb5f89e2d1f",
+      "name": "Task Trigger",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "retryOnFail": false
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "{\n  \"name\": \"First item\",\n  \"code\": 1\n}\n\n",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -16,
+        -32
+      ],
+      "id": "d8036e62-e784-4f0a-a041-6f4a6179befc",
+      "name": "Mock_Task_Data"
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        224,
+        -32
+      ],
+      "id": "2574d2c6-0820-42e8-98ff-cce67dae9337",
+      "name": "Structured_Data"
+    }
+  ],
+  "connections": {
+    "Task Trigger": {
+      "main": [
+        [
+          {
+            "node": "Mock_Task_Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mock_Task_Data": {
+      "main": [
+        [
+          {
+            "node": "Structured_Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "availableInMCP": false
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "276fb08e-96dd-4a98-be30-b19aa733edea",
+  "activeVersionId": null,
+  "versionCounter": 35,
+  "triggerCount": 0,
+  "tags": [],
+  "parentFolder": null,
+  "activeVersion": null,
+  "homeProject": {
+    "id": "cVzmMe2xODLZzXwt",
+    "type": "personal",
+    "name": "Anjali Srivastava <miss.srivastavaa@gmail.com>",
+    "icon": null
+  },
+  "sharedWithProjects": [],
+  "usedCredentials": [],
+  "scopes": [
+    "workflow:create",
+    "workflow:delete",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:update"
+  ],
+  "checksum": "1b6957585b1c8766819b6d1e1bd5409a2b8c62e58017527fbf76f18148fa9a1b"
+}
